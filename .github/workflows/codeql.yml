@@ -75,9 +75,6 @@ jobs:
 
     - name: Initialize CodeQL
       uses: github/codeql-action/init@v1
-      with:
-        languages: java
-        distribution: ubuntu-20.04  # Specify the Linux distribution
 
     - name: Analyze with CodeQL
       uses: github/codeql-action/analyze@v1
