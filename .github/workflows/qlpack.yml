@@ -1,0 +1,5 @@
+name: My CodeQL Pack
+version: v1
+libraries:
+  - language: java
+    path: /src/main/java/com/javatpoint/CodeQLDemo.java
