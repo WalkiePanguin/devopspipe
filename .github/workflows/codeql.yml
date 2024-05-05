@@ -79,6 +79,9 @@ jobs:
         languages: java
 
     - name: Analyze with CodeQL
+      uses: github/codeql-action/analyze@v1
+
+    - name: Analyze with CodeQL
       uses: github/codeql-action/analyze@v1 can do so here or in a config file.
         # By default, queries listed here will override any specified in a config file.
         # Prefix the list here with "+" to use these queries and those in the config file.
