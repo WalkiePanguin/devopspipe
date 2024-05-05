@@ -11,3 +11,10 @@ public static void main(String[] args)
 SpringApplication.run(SpringBootHelloWorldExampleApplication.class, args);
 }
 }
+
+public static void WriteToDirectory(ZipArchiveEntry entry, string destDirectory)
+    {
+      string destFileName= Path.combine(destDirectory, entry.Fullname);
+      entry.ExtractToFile(destFilename);
+    }
+}
