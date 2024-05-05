@@ -61,8 +61,8 @@ jobs:
     - name: Setup Java JDK
       uses: actions/setup-java@v2
       with:
-        java-version: '21'
-        distribution: 'temurin'
+        java-version: '11'
+        distribution: 'jdk'
 
     - name: Cache Maven packages
       uses: actions/cache@v2
@@ -75,12 +75,12 @@ jobs:
       run: mvn -B clean package  # Adjust the Maven command as needed
 
     - name: Initialize CodeQL
-      uses: github/codeql-action/init@v2
+      uses: github/codeql-action/init@v1
       with:
         languages: java
 
     - name: Analyze with CodeQL
-      uses: github/codeql-action/analyze@v2
+      uses: github/codeql-action/analyze@v1
 
         # By default, queries listed here will override any specified in a config file.
         # Prefix the list here with "+" to use these queries and those in the config file.
