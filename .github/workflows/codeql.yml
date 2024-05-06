@@ -101,7 +101,7 @@ jobs:
             GITHUB_TOKEN: ${{ secrets.GIT_TOKEN }}
 
       - name: OWASP ZAP Full Scan
-        uses: zaproxy/action-full-scan@v1
+        uses: zaproxy/action-full-scan@v0.10.0
         with:
           target: "https://github.com/WalkiePanguin/devopspipe/edit/master/.github/workflows/codeql.yml"
         env:
