@@ -14,18 +14,18 @@ import java.sql.ResultSet;
 
 
 public class CodeQLDemo {
-    // Hardcoded Secret Key Vulnerability
-    private static final String username = "superSecret";
-    private static final String password = "superSecret123";
+    // // Hardcoded Secret Key Vulnerability
+    // private static final String username = "superSecret";
+    // private static final String password = "superSecret123";
 
     public static void main(String[] args) {
         System.out.println("Hello");
         
     }
-   //  Cross-Site Scripting (XSS)
-   public void displayUserInput(HttpServletRequest request, HttpServletResponse response) throws IOException {
-       String userInput = request.getParameter("input");
-       response.getWriter().write("<html><body>User input: " + userInput + "</body></html>");
-   }
+   // //  Cross-Site Scripting (XSS)
+   // public void displayUserInput(HttpServletRequest request, HttpServletResponse response) throws IOException {
+   //     String userInput = request.getParameter("input");
+   //     response.getWriter().write("<html><body>User input: " + userInput + "</body></html>");
+   // }
 
 }
