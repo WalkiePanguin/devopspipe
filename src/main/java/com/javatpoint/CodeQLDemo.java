@@ -15,9 +15,28 @@ public class CodeQLDemo {
 
     public static void main(String[] args) {
         System.out.println("Hello");
-        byte[] encoded = "testing1234567";
-        SecretKey secretKey = new SecretKeySpec(encoded, "AES");
+        // Convert the secret key string into a byte array
+        byte[] keyBytes = SECRET_KEY.getBytes();
+
+        // Create an AES SecretKey from the byte array
+        SecretKey secretKey = new SecretKeySpec(keyBytes, "AES");
+
+        String message = "This is a secret message";
+        try {
+            String encrypted = encrypt(message, secretKey);
+            System.out.println("Encrypted: " + encrypted);
+
+            String decrypted = decrypt(encrypted, secretKey);
+            System.out.println("Decrypted: " + decrypted);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
+
+
+
+        
+    
 
    ////  Cross-Site Scripting (XSS)
    // public void displayUserInput(HttpServletRequest request, HttpServletResponse response) throws IOException {
