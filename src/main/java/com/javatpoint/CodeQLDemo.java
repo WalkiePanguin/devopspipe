@@ -15,7 +15,7 @@ public class CodeQLDemo {
 
     public static void main(String[] args) {
         System.out.println("Hello");
-        byte[] encoded = //Key data
+        byte[] encoded = "testing1234567";
         SecretKey secretKey = new SecretKeySpec(encoded, "AES");
     }
 
