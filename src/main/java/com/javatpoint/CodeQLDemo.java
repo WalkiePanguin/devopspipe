@@ -20,5 +20,5 @@ public class CodeQLDemo {
    // public void displayUserInput(HttpServletRequest request, HttpServletResponse response) throws IOException {
    //     String userInput = request.getParameter("input");
    //     response.getWriter().write("<html><body>User input: " + userInput + "</body></html>");
-    }
+   // }
 }
