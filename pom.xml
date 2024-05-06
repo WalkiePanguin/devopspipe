@@ -16,6 +16,12 @@
 	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>1.8</java.version>
+		<sonar.projectKey>devopspipe</sonar.projectKey>
+	    	<sonar.organization>devopspipe</sonar.organization>
+	   	<sonar.sources>src</sonar.sources>
+	   	<sonar.tests>test</sonar.tests>
+	    	<sonar.java.binaries>target/classes</sonar.java.binaries>
+	   	<sonar.exclusions>src/main/java/com/example/exclude/**,src/main/resources/exclude/**</sonar.exclusions>
 	</properties>
 
 	<dependencies>
@@ -60,6 +66,12 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+
+			<plugin>
+			        <groupId>org.sonarsource.scanner.maven</groupId>
+			        <artifactId>sonar-maven-plugin</artifactId>
+			        <version>3.9.1.2184</version>
+		      </plugin>
 		</plugins>
 	</build>
 
