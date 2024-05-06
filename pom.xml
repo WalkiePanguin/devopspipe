@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.javatpoint</groupId>
-	<artifactId>devopspipe</artifactId>
+	<artifactId>spring-boot-hello-world-example</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>devopspipe</name>
+	<name>spring-boot-hello-world-example</name>
 	<packaging>war</packaging>
 	<description>Demo project for Spring Boot</description>
 	<properties>
