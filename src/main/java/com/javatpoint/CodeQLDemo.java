@@ -14,7 +14,8 @@ public class CodeQLDemo {
 
     public static void main(String[] args) {
         System.out.println("Hello");
-        var test = "SGVsbG8gV29ybGQK";
+        String test = "SGVsbG8gV29ybGQK";
+        System.out.println("Decoded Base64: " + new String(java.util.Base64.getDecoder().decode(test)));
     }
 
    ////  Cross-Site Scripting (XSS)
