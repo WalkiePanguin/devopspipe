@@ -40,12 +40,12 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Setup Java JDK
         uses: actions/setup-java@v2
         with:
-          java-version: '21'
+          java-version: '11'
           distribution: 'zulu'
 
       - name: Cache Maven packages
@@ -59,15 +59,10 @@ jobs:
         run: mvn -B clean package
 
       - name: Initialize CodeQL
-        uses: github/codeql-action/init@v2
+        uses: github/codeql-action/init@v3
         with:
-          languages: java,kotlin
-          packs: githubsecuritylab/codeql-${{ matrix.language }}-queries
-
-      - name: Analyze with CodeQL
-        uses: github/codeql-action/analyze@v2
-        with:
-            category: "/language:${{matrix.kanguage}}"
+          languages: ${{ matrix.language }}
+          build-mode: ${{ matrix.build-mode }}
             
         #with:
           #languages: java,kotlin
