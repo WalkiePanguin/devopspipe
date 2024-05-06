@@ -19,8 +19,11 @@ public class CodeQLDemo {
     private static final String username = "superSecret";
     private static final String password = "superSecret123";
 
+    private static final String Key= "b6eb2BEZ3+Utu8kscnNFVw==";
+
     public static void main(String[] args) {
         System.out.println("Hello");
+        
     }
 
     
@@ -32,20 +35,5 @@ public class CodeQLDemo {
    }
 
 
-    //SQL injection
-    public ResultSet getUserData(String username) {
-        Connection connection = null;
-        PreparedStatement preparedStatement = null;
-        ResultSet resultSet = null;
-        try {
-            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/db", "root", "password");
-            String query = "SELECT * FROM users WHERE username = ?";
-            preparedStatement = connection.prepareStatement(query);
-            preparedStatement.setString(1, username);
-            resultSet = preparedStatement.executeQuery();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return resultSet;
-    }
+
 }
