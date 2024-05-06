@@ -67,7 +67,10 @@ jobs:
       - name: Analyze with CodeQL
         uses: github/codeql-action/analyze@v2
         with:
-          languages: java,kotlin
+            category: "/language:${{matrix.kanguage}}"
+            
+        #with:
+          #languages: java,kotlin
 
         # By default, queries listed here will override any specified in a config file.
         # Prefix the list here with "+" to use these queries and those in the config file.
