@@ -62,7 +62,7 @@ jobs:
         uses: github/codeql-action/init@v2
         with:
           languages: java,kotlin
-          config-file: GitHubSecurityLab/CodeQL-Community-Packs/configs/default.yml@main
+          packs: githubsecuritylab/codeql-${{ matrix.language }}-queries
 
       - name: Analyze with CodeQL
         uses: github/codeql-action/analyze@v2
