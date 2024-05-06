@@ -56,7 +56,7 @@ jobs:
           restore-keys: ${{ runner.os }}-maven-
 
       - name: Build with Maven
-        run: mvn -B clean package
+        run: mvn clean install
 
       - name: Initialize CodeQL
         uses: github/codeql-action/init@v3
@@ -95,20 +95,7 @@ jobs:
 
 
       - name: SonarCloud Scan
-  # You may pin to the exact commit or the version.
-  # uses: SonarSource/sonarcloud-github-action@49e6cd3b187936a73b8280d59ffd9da69df63ec9
-        uses: SonarSource/sonarcloud-github-action@v2.1.1
-        with:
-    # Additional arguments to the sonarcloud scanner
-          args: >
-            -Dsonar.projectKey=your_project_key
-            -Dsonar.organization=your_organization
-            -Dsonar.sources=src
-            -Dsonar.tests=test
-            -Dsonar.java.binaries=target/classes
-            -Dsonar.exclusions=src/main/java/com/example/exclude/**,src/main/resources/exclude/**
-    # Set the sonar.projectBaseDir analysis property
-          projectBaseDir: './'  # Adjust this path if your code is located in a subdirectory
+        run: mvn org.sonarsource.scanner.maven:sonar-maven-plugin:sonar
         env:
             SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
             GITHUB_TOKEN: ${{ secrets.GIT_TOKEN }}
