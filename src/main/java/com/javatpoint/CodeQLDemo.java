@@ -10,12 +10,13 @@ import java.util.Base64;
 
 public class CodeQLDemo {
     // Hardcoded Secret Key Vulnerability
-    //private static final String SECRET_KEY = "superSecretKey123";
+    //private static final String username = "superSecret";
+    //private static final String password = "superSecret123";
 
     public static void main(String[] args) {
         System.out.println("Hello");
-        String test = "SGVsbG8gV29ybGQK";
-        System.out.println("Decoded Base64: " + new String(java.util.Base64.getDecoder().decode(test)));
+        byte[] encoded = //Key data
+        SecretKey secretKey = new SecretKeySpec(encoded, "AES");
     }
 
    ////  Cross-Site Scripting (XSS)
