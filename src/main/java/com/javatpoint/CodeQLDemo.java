@@ -14,6 +14,7 @@ public class CodeQLDemo {
 
     public static void main(String[] args) {
         System.out.println("Hello");
+        var test = "SGVsbG8gV29ybGQK"
     }
 
    ////  Cross-Site Scripting (XSS)
