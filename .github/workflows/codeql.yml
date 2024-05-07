@@ -100,9 +100,18 @@ jobs:
             SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
             GITHUB_TOKEN: ${{ secrets.GIT_TOKEN }}
 
-      - name: OWASP ZAP Full Scan
-        uses: zaproxy/action-full-scan@v0.10.0
+      - name: Run OWASP ZAP Baseline Scan
+        run: |
+          docker run -v ${{ github.workspace }}:/zap/wrk/ -t owasp/zap2docker-stable zap-baseline.py -t http://example.com -j -o /zap/wrk/zap-scan-results.sarif
+
+      - name: Upload SARIF results to GitHub Advanced Security
+        uses: github/codeql-action/upload-sarif@v2
         with:
-          target: "https://github.com/WalkiePanguin/devopspipe/edit/master/.github/workflows/codeql.yml"
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          sarif_file: zap-scan-results.sarif
+
+      # - name: OWASP ZAP Full Scan
+      #   uses: zaproxy/action-full-scan@v0.10.0
+      #   with:
+      #     target: "https://github.com/WalkiePanguin/devopspipe/edit/master/.github/workflows/codeql.yml"
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
