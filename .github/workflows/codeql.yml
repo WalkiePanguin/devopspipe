@@ -115,6 +115,9 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GIT_TOKEN }}
 
+      - name: List workspace files after ZAP scan
+        run: ls -ltr
+
       - name: Upload SARIF results to GitHub Advanced Security
         uses: github/codeql-action/upload-sarif@v2
         with:
