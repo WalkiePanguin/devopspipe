@@ -111,7 +111,7 @@ jobs:
         with:
           target: "http://httpbin.org/"
           format: "sarif"
-          output: "owasp-zap-full-scan.sarif"
+          report-file: "owasp-zap-full-scan.sarif"
         env:
           GITHUB_TOKEN: ${{ secrets.GIT_TOKEN }}
 
