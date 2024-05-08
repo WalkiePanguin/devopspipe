@@ -120,7 +120,8 @@ jobs:
 
       - name: Install zap2sarif
         run: |
-          pip3 install zap2sarif
+          pip3 install zap-cli
+          pip3 install sarif-tools
 
       - name: List workspace files after ZAP scan
         run: ls -ltra /tmp
