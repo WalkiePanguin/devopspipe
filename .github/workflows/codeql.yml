@@ -32,7 +32,9 @@ jobs:
       security-events: write
       packages: write
       actions: write
-      contents: write
+      contents: read
+      issues: write
+      pull-requests: write
 
     strategy:
       fail-fast: false
