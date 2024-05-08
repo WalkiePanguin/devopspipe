@@ -113,7 +113,8 @@ jobs:
       #   env:
       #     GITHUB_TOKEN: ${{ secrets.GIT_TOKEN }}
 
-      
+      - name: Pull OWASP ZAP Docker Image
+        run: docker pull owasp/zap2docker-stable
 
       - name: Run OWASP ZAP Docker Container
         run: |
